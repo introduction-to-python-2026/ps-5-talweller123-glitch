@@ -1,13 +1,8 @@
-
-
-
 def split_before_uppercases(formula):
     if formula == "":
         return []
-
     parts = []
     current = ""
-
     for ch in formula:
         if ch.isupper():
             if current:
@@ -15,17 +10,14 @@ def split_before_uppercases(formula):
             current = ch
         else:
             current += ch
-
     if current:
         parts.append(current)
     return parts
-
 def split_at_digit(formula):
     for i, ch in enumerate(formula):
         if ch.isdigit():
             return formula[:i], int(formula[i:])
     return(formula,1)
-
 def count_atoms_in_molecule(molecular_formula):
     """Takes a molecular formula (string) and returns a dictionary of atom counts.  
     Example: 'H2O' → {'H': 2, 'O': 1}"""
